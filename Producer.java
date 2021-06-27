@@ -1,6 +1,11 @@
 package group9;
 import java.util.concurrent.BlockingQueue;
 
+/* 
+ * CS3003 Assignment 6 Group 9
+ * implementation of a multi-threaded producer-consumer design pattern
+ */
+
 public class Producer implements Runnable {
 	private String name;
 	private BlockingQueue<Item> queue;
@@ -9,7 +14,7 @@ public class Producer implements Runnable {
 	public Producer(String name, BlockingQueue<Item> queue){
 		this.name = name;
 		this.queue = queue;
-		// how should itemId be initialized
+		// start with id 0
 		this.itemId = 0;
 	}
 	
@@ -17,8 +22,11 @@ public class Producer implements Runnable {
 		// Produce 10 items for the shared queue
 		for(int i=0; i<10; i++){
 			try {
+				// create new Item
 				Item tItem = new Item(name, itemId++);
+				// put new Item in shared queue
 				queue.put(tItem);
+				// print produce message to interface
 				System.out.println(String.format("Produce: %s", tItem.itemDisp()));
 				
 			} catch (Exception e) {

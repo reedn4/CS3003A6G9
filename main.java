@@ -2,11 +2,13 @@ package group9;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ArrayBlockingQueue;
 
+/* 
+ * CS3003 Assignment 6 Group 9
+ * implementation of a multi-threaded producer-consumer design pattern
+ */
+
 public class main {
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
 		
 		// Create BlockingQueue of size 20

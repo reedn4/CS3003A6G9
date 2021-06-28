@@ -24,10 +24,10 @@ public class Producer implements Runnable {
 			try {
 				// create new Item
 				Item tItem = new Item(name, itemId++);
-				// put new Item in shared queue
-				queue.put(tItem);
 				// print produce message to interface
 				System.out.println(String.format("Produce: %s", tItem.itemDisp()));
+				// put new Item in shared queue
+				queue.put(tItem);
 				
 			} catch (Exception e) {
 				e.printStackTrace();
